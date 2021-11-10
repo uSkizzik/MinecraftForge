@@ -1,0 +1,14 @@
+--- a/com/mojang/blaze3d/audio/Channel.java
++++ b/com/mojang/blaze3d/audio/Channel.java
+@@ -57,6 +_,11 @@
+    }
+ 
+    public void m_83672_() {
++      this.play(0);
++   }
++   
++   public void play(float startingPlaybackPos) {
++      AL10.alSourcef(this.f_83642_, org.lwjgl.openal.AL11.AL_SEC_OFFSET, startingPlaybackPos);
+       AL10.alSourcePlay(this.f_83642_);
+    }
+ 

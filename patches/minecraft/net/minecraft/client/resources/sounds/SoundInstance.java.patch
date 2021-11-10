@@ -1,0 +1,11 @@
+--- a/net/minecraft/client/resources/sounds/SoundInstance.java
++++ b/net/minecraft/client/resources/sounds/SoundInstance.java
+@@ -44,6 +_,8 @@
+    default boolean m_7767_() {
+       return true;
+    }
++   
++   float getStartingPlaybackPos();
+ 
+    @OnlyIn(Dist.CLIENT)
+    public static enum Attenuation {

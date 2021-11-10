@@ -26,7 +26,7 @@
              WeighedSoundEvents weighedsoundevents = p_120313_.m_6775_(this.f_120217_);
              ResourceLocation resourcelocation = p_120313_.m_7904_();
              if (weighedsoundevents == null) {
-@@ -343,11 +_,13 @@
+@@ -343,18 +_,21 @@
                                p_120254_.m_83654_(vec3);
                                p_120254_.m_83670_(flag);
                             });
@@ -35,15 +35,17 @@
                                this.f_120222_.m_120202_(sound.m_119790_()).thenAccept((p_120291_) -> {
                                   channelaccess$channelhandle.m_120154_((p_174993_) -> {
                                      p_174993_.m_83656_(p_120291_);
-                                     p_174993_.m_83672_();
+-                                    p_174993_.m_83672_();
++                                    p_174993_.play(soundinstance.getStartingPlaybackPos());
 +                                    net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.client.event.sound.PlaySoundSourceEvent(this, soundinstance, p_174993_));
                                   });
                                });
                             } else {
-@@ -355,6 +_,7 @@
+                               this.f_120222_.m_120204_(sound.m_119790_(), flag2).thenAccept((p_120294_) -> {
                                   channelaccess$channelhandle.m_120154_((p_174996_) -> {
                                      p_174996_.m_83658_(p_120294_);
-                                     p_174996_.m_83672_();
+-                                    p_174996_.m_83672_();
++                                    p_174996_.play(soundinstance.getStartingPlaybackPos());
 +                                    net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.client.event.sound.PlayStreamingSourceEvent(this, soundinstance, p_174996_));
                                   });
                                });

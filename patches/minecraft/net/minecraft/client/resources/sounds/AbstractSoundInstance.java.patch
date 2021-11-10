@@ -1,0 +1,20 @@
+--- a/net/minecraft/client/resources/sounds/AbstractSoundInstance.java
++++ b/net/minecraft/client/resources/sounds/AbstractSoundInstance.java
+@@ -22,6 +_,7 @@
+    protected int f_119579_;
+    protected SoundInstance.Attenuation f_119580_ = SoundInstance.Attenuation.LINEAR;
+    protected boolean f_119582_;
++   protected float startingPlaybackPos;
+ 
+    protected AbstractSoundInstance(SoundEvent p_119584_, SoundSource p_119585_) {
+       this(p_119584_.m_11660_(), p_119585_);
+@@ -93,5 +_,9 @@
+ 
+    public String toString() {
+       return "SoundInstance[" + this.f_119572_ + "]";
++   }
++   
++   public float getStartingPlaybackPos() {
++      return this.startingPlaybackPos;
+    }
+ }

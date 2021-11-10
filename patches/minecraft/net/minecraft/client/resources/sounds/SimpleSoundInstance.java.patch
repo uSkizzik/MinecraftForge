@@ -1,0 +1,33 @@
+--- a/net/minecraft/client/resources/sounds/SimpleSoundInstance.java
++++ b/net/minecraft/client/resources/sounds/SimpleSoundInstance.java
+@@ -50,15 +_,20 @@
+    }
+ 
+    public SimpleSoundInstance(ResourceLocation p_119734_, SoundSource p_119735_, float p_119736_, float p_119737_, boolean p_119738_, int p_119739_, SoundInstance.Attenuation p_119740_, double p_119741_, double p_119742_, double p_119743_, boolean p_119744_) {
+-      super(p_119734_, p_119735_);
+-      this.f_119573_ = p_119736_;
+-      this.f_119574_ = p_119737_;
+-      this.f_119575_ = p_119741_;
+-      this.f_119576_ = p_119742_;
+-      this.f_119577_ = p_119743_;
+-      this.f_119578_ = p_119738_;
+-      this.f_119579_ = p_119739_;
+-      this.f_119580_ = p_119740_;
+-      this.f_119582_ = p_119744_;
++      this(p_119734_, p_119735_, p_119736_, p_119737_, p_119738_, p_119739_, p_119740_, p_119741_, p_119742_, p_119743_, p_119744_, 0);
++   }
++
++   public SimpleSoundInstance(ResourceLocation location, SoundSource source, float volume, float pitch, boolean looping, int delay, SoundInstance.Attenuation attenuation, double x, double y, double z, boolean relative, float startingPlaybackPos) {
++      super(location, source);
++      this.f_119573_ = volume;
++      this.f_119574_ = pitch;
++      this.f_119575_ = x;
++      this.f_119576_ = y;
++      this.f_119577_ = z;
++      this.f_119578_ = looping;
++      this.f_119579_ = delay;
++      this.f_119580_ = attenuation;
++      this.f_119582_ = relative;
++      this.startingPlaybackPos = startingPlaybackPos;
+    }
+ }
